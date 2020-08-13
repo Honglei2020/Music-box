@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/init.css">
+    <script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?8khecw');
+            src: url('fonts/icomoon.eot?8khecw#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?8khecw') format('truetype'),
+                url('fonts/icomoon.woff?8khecw') format('woff'),
+                url('fonts/icomoon.svg?8khecw#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="max">
+        <header class="clearfix">
+            <div class="logo">
+                <span></span>
+                <h2>Honglei</h2>
+            </div>
+            <div class="search">
+                <span></span>
+                <form action="">
+                    <div class="ipt">
+                        <input type="text" class="shuru" v-model="message">
+                        <button type="button" class="btn" @click="getMusic" @keyup.enter="getMusic">
+                            Y
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </header>
+        <div class="page clearfix">
+            <div class="page-left">
+                <ul>
+                    <li v-for="(i,index) in musiclist">
+                        <div class="song-name">
+                            <a href="javascript:void(0)" @click="getSong(i.id)">
+                                {{i.name}}
+                            </a>
+                        </div>
+                        <span v-if="i.mvid!=0" @click="getMv(i.mvid)">
+                            mv
+                        </span>
+                    </li>
+                    <!-- <li>asd</li>
+                    <li>zxc</li> -->
+                </ul>
+            </div>
+            <div class="page-show" >
+                <div id="show" :class="{playing:isPlaying}">
+                    <!-- <img v-if="url!=0" :src="Imgurl" class="imgurl"> -->
+                </div>
+            </div>
+            <div class="page-right">    
+                <ul v-if="url!=0">
+                    <li v-for="i in Commentdetail">
+                        <img class="user-img" :src="i.user.avatarUrl">
+                        <span class="user-name">{{i.user.nickname}}</span>
+                        <p class="user-talk">{{i.content}}</p>
+                    </li>
+                </ul>
+                <!-- <ul>
+                    <li>asd</li>
+                    <li>zxc</li>
+                </ul> -->
+            </div>
+        </div>
+        <footer>
+            <audio :src="url" @play="play" @pause="pause" controls="controls" autoplay="autoplay" loop="loop"
+                class="myaudio">
+                当前浏览器不支持audio
+            </audio>
+        </footer>
+    </div>
+
+    <script src="js/axios_vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

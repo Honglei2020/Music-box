@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?8khecw');
+  src:  url('fonts/icomoon.eot?8khecw#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8khecw') format('truetype'),
+    url('fonts/icomoon.woff?8khecw') format('woff'),
+    url('fonts/icomoon.svg?8khecw#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-netlify:before {
+  content: "\e900";
+  color: #00c7b7;
+}
+.icon-nucleo:before {
+  content: "\e901";
+  color: #766dcc;
+}
+.icon-connection:before {
+  content: "\e91b";
+}
+.icon-headphones:before {
+  content: "\e910";
+}
+.icon-spinner2:before {
+  content: "\e97b";
+}
